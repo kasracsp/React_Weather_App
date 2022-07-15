@@ -4,6 +4,7 @@ import fetchGeolocation from './redux/geolocation/geolocationAction'
 import fetchCities from "./redux/cities/citiesAction";
 import LandingPage from "./components/LandingPage";
 import SearchPage from "./components/SearchPage";
+import LoadingPage from "./components/LoadingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -18,7 +19,7 @@ function App() {
   return (
     <>
       {geolocationState.loading || weatherApiState.loading ? (
-        <h1>loading...</h1>
+        <LoadingPage />
       ) : weatherApiState.error ? (
         <h1>{weatherApiState.error}</h1>
       ) : (
