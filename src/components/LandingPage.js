@@ -1,22 +1,23 @@
-import React,{useState, useEffect} from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 import { timeTransfrom } from "../helper/functions";
-import  styled from "styled-components";
+import styled from "styled-components";
+import NextTwoDays from "./NextTwoDays";
 
 const CompassSpan = styled.span`
-  transform: translate(-50%) rotate(calc(${props=>props.windDegree} * 1deg));
+  transform: translate(-50%) rotate(calc(${(props) => props.windDegree} * 1deg));
 `;
 
 const LandingPage = () => {
   const weatherApiState = useSelector((state) => state.weatherApiState);
-  const [date,setDate]=useState({})
-  const [isFah,setIsFah]=useState(false)
+  const [date, setDate] = useState({});
+  const [isFah, setIsFah] = useState(false);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (Object.keys(weatherApiState.weather).length > 0) {
       setDate(timeTransfrom(weatherApiState.weather.location.localtime));
     }
-  },[])
+  }, []);
 
   return (
     <>
@@ -142,6 +143,9 @@ const LandingPage = () => {
             </div>
           </div>
         </div>
+      )}
+      {Object.keys(weatherApiState.weather).length > 0 && (
+        <NextTwoDays weather={weatherApiState.weather} isFah={isFah}/>
       )}
     </>
   );

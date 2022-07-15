@@ -2,6 +2,7 @@
 @import 'assets/sassStyles/config';
 @import 'assets/sassStyles/LandingPage';
 @import 'assets/sassStyles/SearchPage';
+@import 'assets/sassStyles/NextTwoDays';
 @import 'assets/sassStyles/responsive';
 
 body {
@@ -19,6 +20,8 @@ body {
   padding: 1rem;
   width: 100vw;
   height: 100vh;
+  max-width:1200px;
+  margin:0 auto;
   font-weight: normal;
   display: flex;
   justify-content: center;
