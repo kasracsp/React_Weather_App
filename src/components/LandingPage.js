@@ -17,7 +17,7 @@ const LandingPage = () => {
       setDate(timeTransfrom(weatherApiState.weather.location.localtime));
     }
   },[])
-  // console.log(weatherApiState.weather);
+
   return (
     <>
       {Object.keys(weatherApiState.weather).length > 0 && (

@@ -1,16 +1,15 @@
 .search_container{
   z-index: 10;
+  width: 100%;
   
   .search_modal {
     position: fixed;
-    width: 100vw;
+    width: 100%;
     top: 0;
     left: 0;
-    z-index: 9;
-    width: 100%;
     background: $textColor;
     color: $darkColor;
-    padding: 1rem 2rem;
+    padding: 1rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,29 +29,97 @@
       font-size: 1rem;
       font-family:'Montserrat', sans-serif;
       text-transform: capitalize;
-
-      &:hover{
-        text-decoration: underline;
+      
+      .cancel{
+        display: none;
+        
+        &:hover{
+          text-decoration: underline;
+        }
+      }
+      
+      .material-icons{
+        display: block;
+        border-radius: 50%;
+        
+        &:hover{
+          background-color: $headColor;
+        }
       }
     }
 
     #search_form {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       gap: .2rem;
+      width: 15rem;
+      max-width: 25rem;
 
-      #search_text {
-        border: 1px solid $boxBackgrundColor;
-        outline: none;
-        font-size: 1rem;
-        padding: .5rem 1rem;
-        border-radius: .2rem;
-        transition: .1s;
+      .input_box{
+        position: relative;
+        width: 100%;
 
-        &:focus {
-          border: 2px solid $boxBackgrundColor;
+        #search_text {
+          width: 100%;
+          position: relative;
+          border: 1px solid $boxBackgrundColor;
+          background-color: $boxBackgrundColor;
+          color: $textColor;
+          outline: none;
+          font-size: 1rem;
+          padding: .5rem 1rem;
+          padding-right: 3rem;
+          border-radius: .2rem;
+          transition: .1s;
+          
+          &:focus {
+            font-weight: bold;
+          }
+  
+          &::placeholder{
+            color: $shadowColor;
+          }  
         }
+        .loading{
+          width: 40px;
+          height: 40px;
+          position: absolute;
+          right: 0;
+          top:50%;
+          transform: translate(0,-50%);
+        }
+      }
+
+      
+      .suggestions{
+        position: absolute ;
+        top: 2.5rem;
+        left: 0;
+        width: 100%;
+        max-height: 10rem;
+        background-color: $textColor;
+        border: 1px solid $boxBackgrundColor;
+        border-radius: 0.2rem;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        list-style: none;
+
+        li{
+          width: 100%;
+          padding: .5rem 1rem;
+          cursor: pointer;
+
+          &:hover{
+            background-color: $boxBackgrundColor;
+            color: $textColor;
+          }
+        }
+        li:not(:last-child){
+          border-bottom: 1px solid $shadowColor;
+        }
+        
       }
 
       button {
@@ -60,7 +127,6 @@
         outline: none;
         color: $textColor;
         background: $boxBackgrundColor;
-        padding: .5rem 1rem;
         border-radius: .2rem;
         font-size: 1rem;
         border: 1px solid $boxBackgrundColor;
@@ -69,22 +135,30 @@
         transition: .1s;
         font-weight: bold;
 
-        &:hover {
-          color: $boxBackgrundColor;
-          background: $headColor;
+        .search-btn{
+          display: none;
+          padding: 0.5rem 1rem;
         }
-
+        .material-icons{
+          display: block;
+          padding: 0.3rem;
+        }
+        
+        &:hover {
+          color: $headColor;
+        }
+        
         &:active {
-          color: $boxBackgrundColor;
-          background: $headColor;
+          color: $headColor;
         }
       }
+
     }
   }
 
   .search {
     position: fixed;
-    right: -.5rem;
+    right: 0;
     top: 10rem;
     border-radius: 50% 0 0 50%;
     overflow: hidden;
@@ -93,13 +167,14 @@
     user-select: none;
     z-index: 10;
     transition: .4s;
+    transform:translateX(0.5rem);
 
     &.hide{
       right: -100%;
     }
 
     &:hover {
-      right: 0;
+      transform:translateX(0.2rem);
 
       span {
         text-shadow: 1px 1px 3px $littleDarkColor;

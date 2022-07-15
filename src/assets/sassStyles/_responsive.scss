@@ -1,0 +1,34 @@
+@include xs-screen{
+  .search_container {
+    .search_modal {
+      padding: 1rem 2rem;
+      gap: 2rem;
+      #close_modal {
+        .cancel {
+          display: block;
+        }
+        .material-icons {
+          display: none;
+        }
+      }
+      #search_form {
+        width: 100%;
+        button {
+          .search-btn {
+            display: block;
+          }
+          .material-icons {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+}
+@include sm-screen {
+  .search_container {
+    .search_modal {
+      padding: 1rem 3rem;
+    }
+  }
+}

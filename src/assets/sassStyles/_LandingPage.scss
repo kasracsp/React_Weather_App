@@ -1,7 +1,6 @@
 .main_weather {
   width: 100%;
-  padding: 2rem;
-  margin-top: 5rem;
+  padding:2rem;
   background: $boxBackgrundColor;
   display: flex;
   flex-direction: column;
@@ -86,6 +85,8 @@
       h3 {
         font-size: .8rem;
         color: $shadowColor;
+        width: 4.2rem;
+        overflow: hidden;
 
         .text_temp {
           font-size: 1.2rem;

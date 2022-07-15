@@ -9,4 +9,14 @@ const timeTransfrom=time=>{
   return {year, month, day ,weekday}
 }
 
-export {timeTransfrom}
+const getSuggestions = (state, key) => {
+  if (key.trim().length > 0) {
+    const suggestions = state.filter((item) =>
+      item.toLowerCase().includes(key.trim().toLowerCase())
+    );
+    return suggestions;
+  }
+  return [];
+};
+
+export { timeTransfrom, getSuggestions };

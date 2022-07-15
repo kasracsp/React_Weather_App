@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import fetchGeolocation from './redux/geolocation/geolocationAction'
+import fetchCities from "./redux/cities/citiesAction";
 import LandingPage from "./components/LandingPage";
 import SearchPage from "./components/SearchPage";
 
@@ -11,6 +12,7 @@ function App() {
 
   useEffect(() => {
     dispatch(fetchGeolocation());
+    dispatch(fetchCities());
   }, []);
 
   return (
