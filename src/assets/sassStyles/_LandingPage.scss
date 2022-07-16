@@ -2,10 +2,7 @@
   width: 100%;
   padding:2rem;
   background: $boxBackgrundColor;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include flexStyle(column, center, center);
   gap: 1rem;
 
   .weather_intro {
@@ -26,24 +23,15 @@
 
   .weather_info {
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
+    @include flexStyle(column, center, center);
     .date {
       width: 70%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include flexStyle(column, center, center);
       padding: 1rem;
       border-bottom: 1px solid $shadowColor;
 
       .w_y {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexStyle(row, center, center);
         gap: 2rem;
 
         #year {
@@ -70,10 +58,7 @@
 
     .weather_temp {
       width: 70%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
+      @include flexStyle(column, center, center);
       padding: 1rem;
       border-bottom: 1px solid $shadowColor;
       gap: .5rem;
@@ -95,9 +80,7 @@
       }
 
       .h_l {
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        @include flexStyle(row, center, center);
         gap: 1rem;
 
         h3 {
@@ -115,9 +98,7 @@
 
     .wind {
       width: 70%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexStyle(row, center, center);
       padding: 1rem;
       gap: 2rem;
 
@@ -157,14 +138,10 @@
 
   .weather_type {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    @include flexStyle(row, space-between, center);
 
     .show_weather_type {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexStyle(row, center, center);
       gap: 1rem;
 
       #weather_type_text {
@@ -180,9 +157,7 @@
     }
 
     .cel_or_fah {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flexStyle(row, center, center);
       gap: .3rem;
       user-select: none;
 

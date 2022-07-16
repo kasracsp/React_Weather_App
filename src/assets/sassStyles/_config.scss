@@ -8,6 +8,25 @@
   -webkit-tap-highlight-color: transparent;
 }
 
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@mixin flexStyle($direction,$justify,$align){
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
 @mixin xs-screen {
   @media screen and(min-width:400px) {
     @content;

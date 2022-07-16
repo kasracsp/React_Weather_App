@@ -24,7 +24,5 @@ body {
   max-width:1200px;
   margin:0 auto;
   font-weight: normal;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include flexStyle(row,center,center);
 }

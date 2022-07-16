@@ -25,9 +25,7 @@
     clip-path: polygon(50% 0, 0 100%, 100% 100%);
     background: $textColor;
     color: $littleDarkColor;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    @include flexStyle(row, center, center);
     cursor: pointer;
     
     &:hover {
@@ -67,8 +65,7 @@
     align-items: center;
 
     .next_week_weather {
-      display: flex;
-      flex-direction: column;
+      @include flexStyle(column, center, space-between);
       width: 10rem;
       margin: 0 auto;
       background-color: $boxBackgrundColor;
@@ -83,17 +80,13 @@
       }
 
       .next_date {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexStyle(row, space-between, center);
         gap: 1rem;
         margin-bottom: 0.2rem;
       }
 
       .next_high_low {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexStyle(row, space-between, center);
         font-size: .7rem;
 
         & p .next_high {
@@ -106,9 +99,7 @@
       }
 
       .next_type {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flexStyle(row, space-between, center);
         gap: 1rem;
 
         .next_type_text {
@@ -134,32 +125,5 @@
     &:nth-child(2) {
       animation-delay: .125s;
     }
-
-    &:nth-child(3) {
-      animation-delay: .15s;
-    }
-
-    &:nth-child(4) {
-      animation-delay: .175s;
-    }
-
-    &:nth-child(5) {
-      animation-delay: 0.2s;
-    }
-
-    &:nth-child(6) {
-      animation-delay: .225s;
-    }
-  }
-}
-@keyframes slideIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10rem);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateY(0);
   }
 }

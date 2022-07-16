@@ -22,7 +22,7 @@ const fetchWeatherApi=(city)=>{
     dispatch(fetchWeatherApiRequest())
     axios
       .get(
-        "http://api.weatherapi.com/v1/forecast.json?key=" +
+        "https://api.weatherapi.com/v1/forecast.json?key=" +
           process.env.REACT_APP_WEATHERAPI_IP_KEY +
           "&q=" +
           city +
